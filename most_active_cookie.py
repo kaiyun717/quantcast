@@ -38,24 +38,27 @@ def return_most_active_cookie(file_name, date):
         >>> AtY0laUfhglK3lC7
     
     """
-    
 
     print(file_name, date)
 
 
 def proper_file_name(file_name):
-    """Returns the file name if its format is proper. Otherwise raise error."""
+    """ Returns the file name if its format is proper. 
+        Otherwise raise error.
+    """
     if file_name[-4:] != ".csv":
-        msg = "{file_name} is not a proper csv file name.".format(file_name=file_name)
+        msg = f"{file_name} is not a proper csv file name."
         raise argparse.ArgumentTypeError(msg)
 
     return file_name
 
 def proper_date(date):
-    """Returns the date if its format is proper. Otherwise raise error."""
+    """ Returns the date if it is valid and its format is proper. 
+        Otherwise raise error.
+    """
     date_pattern = r'^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$'
     if not bool(re.match(date_pattern, date)):
-        msg = "{date} has to be in the format YYYY-MM-DD.".format(date=date)
+        msg = f"{date} has to be a valid date in the format YYYY-MM-DD."
         raise argparse.ArgumentTypeError(msg)
     
     year = int(date[:4])
