@@ -2,8 +2,6 @@
 Quantcast - Coding challenge
 Author: Kai Yun
 """
-import os
-import sys
 import re
 import argparse
 import datetime
@@ -38,8 +36,23 @@ def return_most_active_cookie(file_name, date):
         >>> AtY0laUfhglK3lC7
     
     """
-
-    print(file_name, date)
+    active_cookies_today = {}
+    
+    # If the `date` matches the date in the log, then that is counted into the dictionary    
+    with open(file_name, 'r') as f:
+        next(f)
+        for line in f:
+            words = line.split(',')
+            cookie_name = words[0]
+            cookie_date = words[1][:10]
+            if cookie_date == date:
+                active_cookies_today[cookie_name] = active_cookies_today.get(cookie_name, 0) + 1
+    
+    if not active_cookies_today:
+        raise ValueError(f"The given date {date} does not exist in the cookie logs file.\n")
+    
+    most_active_cookie = max(active_cookies_today, key=active_cookies_today.get)
+    return most_active_cookie
 
 
 def proper_file_name(file_name):
