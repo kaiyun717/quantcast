@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 Quantcast - Coding challenge
 Author: Kai Yun
@@ -7,7 +8,6 @@ import sys
 import re
 import argparse
 import datetime
-from tkinter import N
 
 
 def return_most_active_cookies(target_file, target_date):
@@ -107,8 +107,11 @@ def parse_args(sys_args):
     args = parser.parse_args(sys_args)
     return args
 
-def main():
-    args = parse_args(sys.argv[1:])
+def main(arg_strings=None):
+    if arg_strings is not None:
+        args = parse_args(arg_strings)
+    else:
+        args = parse_args(sys.argv[1:])
     most_active_cookies = return_most_active_cookies(target_file=args.file, 
                                                      target_date=args.date)
     print(*most_active_cookies, sep='\n')
