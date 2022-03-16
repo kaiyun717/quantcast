@@ -9,8 +9,6 @@ import os
 import datetime
 import argparse
 
-from parso import parse
-
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from quantcast.most_active_cookie import return_most_active_cookies, \
