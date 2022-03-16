@@ -47,8 +47,7 @@ fbcn5UAVanZf6UtG
 • Cookies in the log file are sorted by timestamp (most recent occurrence is first line of the file).
 
 ## Recommendations:
-We're looking for a concise, maintainable, extendable and correct solution. We're hoping you'll deliver your
-solution as production grade code and demonstrate:
+We're looking for a concise, maintainable, extendable and correct solution. We're hoping you'll deliver your solution as production grade code and demonstrate:
 
 • good testing practices,
 
@@ -56,5 +55,4 @@ solution as production grade code and demonstrate:
 
 • clean coding practices (meaningful names, clean abstractions, etc.)
 
-Please use a programming language you’re very comfortable with. The next stage of the interview will
-involve extending your code.
+Please use a programming language you’re very comfortable with. The next stage of the interview will involve extending your code.
