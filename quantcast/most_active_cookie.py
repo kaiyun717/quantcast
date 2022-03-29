@@ -9,6 +9,8 @@ import re
 import argparse
 import datetime
 
+from collections import defaultdict
+
 
 def return_most_active_cookies(target_file, target_date):
     """ Returns the most active cookies for the given date from a cookie log file.
@@ -45,8 +47,10 @@ def return_most_active_cookies(target_file, target_date):
         ... fbcn5UAVanZf6UtG
     
     """
+    max_freq = 0
     # If the `date` matches the date in the log, then that is counted into the dictionary
     active_cookies_today = {}
+    active_freq_today = defaultdict(set)
     target_date_reached = False
 
     with open(target_file, 'r') as f:
@@ -56,7 +60,13 @@ def return_most_active_cookies(target_file, target_date):
             cookie_name, cookie_datetime = words
             cookie_date = datetime.datetime.strptime(cookie_datetime[:10], '%Y-%m-%d').date()
             if cookie_date == target_date:
-                active_cookies_today[cookie_name] = active_cookies_today.get(cookie_name, 0) + 1
+                freq = active_cookies_today.get(cookie_name, 0) + 1
+                active_cookies_today[cookie_name] = freq
+                
+                if freq >= max_freq:
+                    max_freq = freq
+                    active_freq_today[freq].add(cookie_name)
+
                 target_date_reached = True
             else:
                 if target_date_reached:
@@ -67,8 +77,8 @@ def return_most_active_cookies(target_file, target_date):
     if not active_cookies_today:
         raise ValueError(f"The given date {target_date} does not exist in the cookie logs file.\n")
     
-    max_num_occurences = max(active_cookies_today.values())
-    most_active_cookies = [k for k, v in active_cookies_today.items() if v == max_num_occurences]
+    most_active_cookies = [cookies for cookies in active_freq_today[max_freq]]
+
     return most_active_cookies
 
 
