@@ -67,21 +67,21 @@ class TestReturnMostActiveCookies(unittest.TestCase):
         for k, v in test_dates_and_results.items():
             test_date = datetime.datetime.strptime(k, '%Y-%m-%d').date()
             returned_cookies = return_most_active_cookies(test_file, test_date)
-            self.assertEqual(returned_cookies, v)
+            self.assertCountEqual(returned_cookies, v)
     
     def test_log2_file(self):
         test_file = os.path.join(os.path.dirname(__file__), '..', 'data', 'cookie_log2.csv')
         test_date = datetime.datetime.strptime('2018-12-09', '%Y-%m-%d').date()
         expected_cookies = ['SAZuXPGUrfbcn5UA']
         returned_cookies = return_most_active_cookies(test_file, test_date)
-        self.assertEqual(returned_cookies, expected_cookies)
+        self.assertCountEqual(returned_cookies, expected_cookies)
 
     def test_log3_file(self):
         test_file = os.path.join(os.path.dirname(__file__), '..', 'data', 'cookie_log3.csv')
         test_date = datetime.datetime.strptime('2018-12-07', '%Y-%m-%d').date()
         expected_cookies = ['4sMM2LxV07bPJzwf']
         returned_cookies = return_most_active_cookies(test_file, test_date)
-        self.assertEqual(returned_cookies, expected_cookies)
+        self.assertCountEqual(returned_cookies, expected_cookies)
 
 
 if __name__ == '__main__':
