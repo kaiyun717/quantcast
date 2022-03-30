@@ -58,11 +58,8 @@ def return_most_active_cookies(target_file, target_date):
             if cookie_date == target_date:
                 active_cookies_today[cookie_name] = active_cookies_today.get(cookie_name, 0) + 1
                 target_date_reached = True
-            else:
-                if target_date_reached:
-                    break
-                else:
-                    continue
+            elif target_date_reached:
+                break
     
     if not active_cookies_today:
         raise ValueError(f"The given date {target_date} does not exist in the cookie logs file.\n")
