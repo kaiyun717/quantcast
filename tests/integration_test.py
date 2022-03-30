@@ -32,12 +32,12 @@ class TestIntegration(unittest.TestCase):
                                   '2018-12-07': ['4sMM2LxV07bPJzwf']}
 
         for k, v in test_dates_and_results.items():
-            capturedOutput = io.StringIO()
-            sys.stdout = capturedOutput
+            captured_output = io.StringIO()
+            sys.stdout = captured_output
             main([self.test_files[0], '-d', k])
             sys.stdout = sys.__stdout__
-            expectedOutput = '\n'.join(v) + '\n'
-            self.assertCountEqual(expectedOutput, capturedOutput.getvalue())
+            expected_output = '\n'.join(v) + '\n'
+            self.assertCountEqual(expected_output, captured_output.getvalue())
 
     def test_main_cookie3(self):
         test_dates_and_results = {'2018-12-09': ['AtY0laUfhglK3lC7'], 
@@ -45,12 +45,12 @@ class TestIntegration(unittest.TestCase):
                                   '2018-12-07': ['4sMM2LxV07bPJzwf']}
         
         for k, v in test_dates_and_results.items():
-            capturedOutput = io.StringIO()
-            sys.stdout = capturedOutput
+            captured_output = io.StringIO()
+            sys.stdout = captured_output
             main([self.test_files[2], '-d', k])
             sys.stdout = sys.__stdout__
-            expectedOutput = '\n'.join(v) + '\n'
-            self.assertCountEqual(expectedOutput, capturedOutput.getvalue())
+            expected_output = '\n'.join(v) + '\n'
+            self.assertCountEqual(expected_output, captured_output.getvalue())
 
 
 if __name__ == '__main__':
