@@ -37,7 +37,7 @@ class TestIntegration(unittest.TestCase):
             main([self.test_files[0], '-d', k])
             sys.stdout = sys.__stdout__
             expectedOutput = '\n'.join(v) + '\n'
-            self.assertEqual(expectedOutput, capturedOutput.getvalue())
+            self.assertCountEqual(expectedOutput, capturedOutput.getvalue())
 
     def test_main_cookie3(self):
         test_dates_and_results = {'2018-12-09': ['AtY0laUfhglK3lC7'], 
@@ -50,7 +50,7 @@ class TestIntegration(unittest.TestCase):
             main([self.test_files[2], '-d', k])
             sys.stdout = sys.__stdout__
             expectedOutput = '\n'.join(v) + '\n'
-            self.assertEqual(expectedOutput, capturedOutput.getvalue())
+            self.assertCountEqual(expectedOutput, capturedOutput.getvalue())
 
 
 if __name__ == '__main__':
