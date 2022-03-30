@@ -15,7 +15,7 @@ from quantcast.most_active_cookie import main
 
 class TestIntegration(unittest.TestCase):
     def __init__(self, *args, **kwargs):
-        super(TestIntegration, self).__init__(*args, *kwargs)
+        super(TestIntegration, self).__init__(*args, **kwargs)
         self.test_file_names = ['cookie_log1.csv', 'cookie_log2.csv', 'cookie_log3.csv']
         self.test_files = [os.path.join(os.path.dirname(__file__), '..', 'data', file_name)
                            for file_name in self.test_file_names]
