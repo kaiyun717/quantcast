@@ -90,7 +90,7 @@ def proper_file_name(file_name):
 
 def proper_date(given_date):
     """ Returns the date if it is valid and its format is proper. Otherwise raise error. """
-    date_pattern = r'^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$'
+    date_pattern = r'^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$'
     if not bool(re.match(date_pattern, given_date)):
         msg = f"{given_date} has to be a valid date in the format YYYY-MM-DD."
         raise argparse.ArgumentTypeError(msg)
