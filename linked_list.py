@@ -1,0 +1,1 @@
+""" Implementation of a simple Linked List in Python. """
