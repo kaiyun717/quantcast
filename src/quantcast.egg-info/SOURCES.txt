@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/quantcast/__init__.py
+src/quantcast/most_active_cookie.py
+src/quantcast.egg-info/PKG-INFO
+src/quantcast.egg-info/SOURCES.txt
+src/quantcast.egg-info/dependency_links.txt
+src/quantcast.egg-info/requires.txt
+src/quantcast.egg-info/top_level.txt

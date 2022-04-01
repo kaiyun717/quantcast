@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: quantcast
+Version: 0.0.0
+Summary: returns the most active cookies given a log file
+Home-page: https://github.com/kaiyun717/quantcast
+Author: Kai Yun
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: <4,>=3.6
+
+UNKNOWN
+
