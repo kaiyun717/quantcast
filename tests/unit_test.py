@@ -11,7 +11,7 @@ import argparse
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
-from src.most_active_cookie import return_most_active_cookies, \
+from src.quantcast.most_active_cookie import return_most_active_cookies, \
                                          proper_date, \
                                          proper_file_name, \
                                          parse_args

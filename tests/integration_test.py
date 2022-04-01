@@ -10,7 +10,7 @@ import io
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
-from src.most_active_cookie import main
+from src.quantcast.most_active_cookie import main
 
 
 class TestIntegration(unittest.TestCase):
